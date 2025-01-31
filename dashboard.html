@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/styledash.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Dashboard</h1>
+    </header>
+    <main>
+        <button class="add-button" onclick="toggleForm()">
+            <i class="fas fa-plus"></i>
+        </button>
+
+        <section class="form-section">
+            <button class="hide-section" onclick="toggleForm()">
+                <i class="fas icon-toggle"></i>
+            </button>
+
+            <h3>Add New Task</h3>
+            
+            <div class="form-group">
+                <label for="description">Description</label>
+                <input type="text" id="description" placeholder="Task Description">
+            </div>
+            <div class="form-group">
+                <label for="start_date">Start Date</label>
+                <input type="date" id="start_date">
+            </div>
+            <div class="form-group">
+                <label for="end_date">End Date</label>
+                <input type="date" id="end_date">
+            </div>
+            <div class="form-group">
+                <label for="photo">Photo</label>
+                <input type="file" id="photo" accept="image/*" capture="environment">
+            </div>
+            <button onclick="addTask()">Add Task</button>
+        </section>
+
+        <section class="dashboard-section">
+            <h3>Pending Tasks</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="task-list">
+                    <!-- Task will be dynamically loaded here-->
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+<script src="./scripts/scriptdash.js"></script>
+</html>
